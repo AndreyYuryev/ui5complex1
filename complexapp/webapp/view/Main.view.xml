@@ -8,7 +8,28 @@
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content />
+					<content>
+                        <List id="idListThemes"
+                            headerText="Themes"
+                            items="{
+                                path: '/ThemeSet',
+                                sorter: { 
+                                path: 'Owner' }
+                                    }" 
+                            mode="SingleSelectMaster"
+                            selectionChange="onSelectionChange">
+                            <items>
+                                <StandardListItem id="idStandardListItem"
+                                    title="{Title}"
+                                    description="{ parts: [
+                                        { path: 'Description' },
+                                        { path: 'Owner' },
+                                        { path: 'CreationDate' }
+                                        ]}" 
+                                    info="{Status}" />
+                            </items>
+                        </List>
+                    </content>
 				</Page>
 			</pages>
 		</App>
