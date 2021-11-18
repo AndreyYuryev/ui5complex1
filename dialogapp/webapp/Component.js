@@ -1,10 +1,10 @@
 sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-        "ns/dialogapp/model/models",
-        "sap/ui/model/odata/v2/ODataModel"
+        "ns/dialogapp/model/models"
+        
 	],
-    function (UIComponent, Device, models, ODataModel) {
+    function (UIComponent, Device, models) {
         "use strict";
 
         return UIComponent.extend("ns.dialogapp.Component", {
