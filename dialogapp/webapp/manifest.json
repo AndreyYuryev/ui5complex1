@@ -59,7 +59,9 @@
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+            "refreschAfterChange": true
+        }
       }
     },
     "resources": {

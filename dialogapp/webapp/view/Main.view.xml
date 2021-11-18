@@ -3,6 +3,8 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
 >
 	<Shell id="shell">
 		<App id="app">
@@ -10,28 +12,121 @@
 				<Page id="page" title="{i18n>title}">
 					<content>
                         <ScrollContainer id="idScrollContainer" vertical="true" height="50%">
-                        <List id="idListThemes"
-                            headerText="Themes"
-                            items="{
-                                path: '/ThemeSet',
-                                sorter: { 
-                                    path: 'Owner' }
-                                    }" 
-                            mode="SingleSelectMaster"
-                            selectionChange="onSelectionChange">
-                            <items>
-                                <StandardListItem
-                                    id="idStandardListItem"
-                                    title="{Title}"
-                                    description="{ parts: [
-                                    { path: 'Description' },
-                                    { path: 'Owner' },
-                                    { path: 'CreationDate' }
-                                    ]}" 
-                                    info="{Status}" />
-                            </items>
-                        </List>
-                        </ScrollContainer>    
+                            <List id="idListThemes"
+                                headerText="Themes"
+                                items="{
+                                    path: '/ThemeSet',
+                                    sorter: { 
+                                        path: 'Owner' }
+                                        }" 
+                                mode="SingleSelectMaster"
+                                selectionChange="onSelectionChange">
+                                <items>
+                                    <StandardListItem
+                                        id="idStandardListItem"
+                                        title="{Title}"
+                                        description="{ parts: [
+                                        { path: 'Description' },
+                                        { path: 'Owner' },
+                                        { path: 'CreationDate' }
+                                        ]}" 
+                                        info="{Status}" />
+                                </items>
+                            </List>
+                        </ScrollContainer>   
+                        <VBox id="idVBox" class="sapUiSmallMargin">
+                            <f:Form id="FormChange"
+                                editable="true">
+                                <f:toolbar>
+                                    <Toolbar id="TB1">
+                                        <Title id="ToolbarTitle" text="Edit"/>
+                                        <ToolbarSpacer id="idTBS" />
+                                        <Button id="idBTC" text="Create" press="onCreatePress"/>
+                                        <Button id="idBTU" text="Update" press="onUpdatePress" />
+                                        <Button id="idBTD" text="Delete" press="onDeletePress" />
+                                    </Toolbar>
+                                </f:toolbar>                        
+                                <f:layout>
+                                    <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1"
+                                        labelSpanXL="3"
+                                        labelSpanL="3"
+                                        labelSpanM="3"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="4"
+                                        emptySpanL="4"
+                                        emptySpanM="4"
+                                        emptySpanS="0"
+                                        columnsXL="1"
+                                        columnsL="1"
+                                        columnsM="1"
+                                        singleContainerFullSize="false" />
+                                </f:layout>
+                                <f:formContainers>
+                                    <f:FormContainer id="_IDGenFormContainer1">
+                                        <f:formElements>
+                                            <f:FormElement id="_IDGenFormElement1">
+                                                <f:label>
+                                                    <Label id="_IDGenLabel1" required="true" text='Title'></Label>
+                                                </f:label>
+                                                <f:fields>
+                                                    <Input 
+                                                        value="{
+                                                            path: 'viewModel>/Title',
+                                                            type: 'sap.ui.model.odata.type.String',
+                                                            constraints: {
+                                                                nullable: false,
+                                                                maxLength: 30
+                                                            }
+                                                        }" 
+                                                        id="title"/>
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement id="_IDGenFormElement2" label="Owner">
+                                                <f:fields>
+                                                    <Input value="{viewModel>/Owner}" id="owner"/>
+                                                </f:fields>
+                                            </f:FormElement>                                    
+                                            <f:FormElement id="_IDGenFormElement3" label="Descripition">
+                                                <f:fields>
+                                                    <Input value="{viewModel>/Description}" id="description"/>
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement id="_IDGenFormElement4" label="Status">
+                                                <f:fields>
+                                                    <!--<Input value="{viewModel>/Status}" id="status"/>-->
+                                                    <ObjectStatus id="_IDGenObjectStatus1" 
+                                                        text="{viewModel>/Status}" 
+                                                        state="{
+                                                            path: 'viewModel>/Status',
+                                                            formatter: '.formatter.statusState'
+                                                        }"
+                                                        icon="{
+                                                            path: 'viewModel>/Status',
+                                                            formatter: '.formatter.statusIcon'                                                        
+                                                        }">
+                                                    </ObjectStatus>
+                                                </f:fields>
+                                            </f:FormElement>   
+                                            <f:FormElement id="_IDGenFormElement5" label="CreationDate">
+                                                <f:fields>
+                                                    <DatePicker id="_IDGenDatePicker1" 
+                                                        value="{
+                                                            path: 'viewModel>/CreationDate',
+                                                            type: 'sap.ui.model.type.Date',
+                                                            formatOptions: {
+                                                                source: {pattern: 'dd.MM.yyyy'},
+                                                                pattern: 'dd MMM yyyy'
+                                                            }
+                                                        }">
+                                                    </DatePicker>
+                                                </f:fields>
+                                            </f:FormElement>                                   
+                                        </f:formElements>
+                                    </f:FormContainer>
+                                </f:formContainers>
+                            </f:Form>
+                        </VBox> 
                     </content>
 				</Page>
 			</pages>

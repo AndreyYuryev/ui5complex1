@@ -1,8 +1,7 @@
 sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-        "ns/dialogapp/model/models"
-        
+        "ns/dialogapp/model/models"   
 	],
     function (UIComponent, Device, models) {
         "use strict";
