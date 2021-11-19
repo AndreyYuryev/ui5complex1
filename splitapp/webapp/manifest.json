@@ -42,7 +42,10 @@
         "dependencies": {
             "minUI5Version": "1.96.0",
             "libs": {
-                "sap.ui.core": {}
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.f": {}
             }
         },
         "contentDensities": {
@@ -75,7 +78,7 @@
                 "viewType": "XML",
                 "async": true,
                 "viewPath": "ns.splitapp.view",
-                "controlAggregation": "pages",
+                "controlAggregation": "masterPages",
                 "controlId": "SplitApp",
                 "clearControlAggregation": false,
                 "bypassed": {
