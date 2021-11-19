@@ -81,7 +81,7 @@
       "runtimeExecutable": "npx",
       "args": [
         "--open",
-        "index.html?sap-client=800#nsdialogapp-display"
+        "index.html?sap-client=800"
       ],
       "windows": {
         "runtimeExecutable": "npx.cmd"
