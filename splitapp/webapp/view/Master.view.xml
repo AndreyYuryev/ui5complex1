@@ -1,0 +1,14 @@
+<mvc:View
+    controllerName="ns.splitapp.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Page id="page" title="{i18n>title}">
+		<content>
+            <List id="_IDGenList1" items="{/EventSet}">
+                <ObjectListItem id="_IDGenObjectListItem1" type="Active" title="{Title}" intro="{Status}" number="{EventDate}" numberUnit="{Status}" press="onItemPress"/>
+            </List>
+        </content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="ns.splitapp.controller.Details"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Page id="_IDGenPage1" title="{i18n>detailsTitle}">
+		<content>
+            <HBox id="_IDGenHBox1" >
+                <Text id="_IDGenText1" text="{Description}" />
+            </HBox>
+            <HBox id="_IDGenHBox2">
+                <Text id="_IDGenText2" text="{Status}" />
+            </HBox>
+        </content>
+	</Page>
+</mvc:View>
