@@ -45,7 +45,7 @@
                                     <f:fields>
                                         <Input 
                                                         value="{
-                                                            path: 'viewModel>/Title',
+                                                            path: 'Title',
                                                             type: 'sap.ui.model.odata.type.String',
                                                             constraints: {
                                                                 nullable: false,
@@ -57,25 +57,25 @@
                                 </f:FormElement>
                                 <f:FormElement id="_IDGenFormElement2" label="Owner">
                                     <f:fields>
-                                        <Input value="{viewModel>/Owner}" id="owner"/>
+                                        <Input value="{Owner}" id="owner"/>
                                     </f:fields>
                                 </f:FormElement>                                    
                                 <f:FormElement id="_IDGenFormElement3" label="Descripition">
                                     <f:fields>
-                                        <Input value="{viewModel>/Description}" id="description"/>
+                                        <Input value="{Description}" id="description"/>
                                     </f:fields>
                                 </f:FormElement>
                                 <f:FormElement id="_IDGenFormElement4" label="Status">
                                     <f:fields>
                                                     <!--<Input value="{viewModel>/Status}" id="status"/>-->
                                         <ObjectStatus id="_IDGenObjectStatus1" 
-                                                        text="{viewModel>/Status}" 
+                                                        text="{Status}" 
                                                         state="{
-                                                            path: 'viewModel>/Status',
+                                                            path: 'Status',
                                                             formatter: '.formatter.statusState'
                                                         }"
                                                         icon="{
-                                                            path: 'viewModel>/Status',
+                                                            path: 'Status',
                                                             formatter: '.formatter.statusIcon'                                                        
                                                         }" />
                                     </f:fields>
@@ -84,7 +84,7 @@
                                     <f:fields>
                                         <DatePicker id="_IDGenDatePicker1" 
                                                         value="{
-                                                            path: 'viewModel>/CreationDate',
+                                                            path: 'CreationDate',
                                                             type: 'sap.ui.model.type.Date',
                                                             formatOptions: {
                                                                 source: {pattern: 'dd.MM.yyyy'},
