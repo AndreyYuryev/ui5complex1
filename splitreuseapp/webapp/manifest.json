@@ -1,0 +1,149 @@
+{
+    "_version": "1.32.0",
+    "sap.app": {
+        "id": "ns.splitreuseapp",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZODATA_4_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.96.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "ns.splitreuseapp.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "ns.splitreuseapp.view",
+                "controlAggregation": "pages",
+                "controlId": "SplitApp",
+                "clearControlAggregation": false,
+                "bypassed": {
+                    "target": [
+                        "NotFound"
+                    ]
+                }
+            },
+            "routes": [
+                {
+                    "name": "RouteMaster",
+                    "pattern": "",
+                    "target": [
+                        "TargetMaster",
+                        "TargetEmpty"
+                    ]
+                },
+                {
+                    "name": "RouteDetails",
+                    "pattern": "details/{id}",
+                    "target": [
+                        "TargetMaster",
+                        "TargetDetails"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMaster": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Master",
+                    "viewName": "Master"
+                },
+                "TargetEmpty": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "controlAggregation": "detailPages",
+                    "viewId": "Empty",
+                    "viewName": "Empty"
+                },
+                "TargetDetails": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "controlAggregation": "detailPages",
+                    "viewId": "Details",
+                    "viewName": "Details"
+                },
+                "NotFound": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "controlAggregation": "detailPages",
+                    "viewId": "NotFound",
+                    "viewName": "NotFound"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "ns.splitreuseapp.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "SplitApp"
+        }
+    }
+}
