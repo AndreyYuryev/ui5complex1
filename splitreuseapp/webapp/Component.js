@@ -1,8 +1,8 @@
 sap.ui.define([
-		"sap/ui/core/UIComponent",
-		"sap/ui/Device",
-		"ns/splitreuseapp/model/models"
-	],
+    "sap/ui/core/UIComponent",
+    "sap/ui/Device",
+    "ns/splitreuseapp/model/models"
+],
     function (UIComponent, Device, models) {
         "use strict";
 
@@ -23,9 +23,23 @@ sap.ui.define([
                 // enable routing
                 this.getRouter().initialize();
 
-				// set the device model
-				this.setModel(models.createDeviceModel(), "device");
+                // set the device model
+                this.setModel(models.createDeviceModel(), "device");
+            },
+
+            getThemesComponent: function () {
+                if (!this.oThemesComponent) {
+                    this.oThemesComponent = sap.ui.component({
+                        name: 'ns.componentapp',
+                        settings: {},
+                        componentData: {},
+                        async: true,
+                        manifest: true
+                    });
+                }
+                return this.oThemesComponent;
             }
+
         });
     }
 );
