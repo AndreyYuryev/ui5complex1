@@ -4,13 +4,33 @@
     displayBlock="true"
     xmlns="sap.m"
 >
-	<Shell id="shell">
-		<App id="app">
-			<pages>
-				<Page id="page" title="{i18n>title}">
-					<content />
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+    <Page id="pagem" title="{i18n>title}">
+		<content>
+                <List id="idListThemes"
+                                headerText="Themes"
+                                items="{/ThemeSet}" 
+                                mode="SingleSelectMaster"
+                                selectionChange="onSelectionChange"
+                                growing="true"
+                                growingThreshold="4">
+                    <infoToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar1" >
+                            <Title id="_IDGenTitle1" text="{i18n>ttlList}" />
+                            <Button id="_IDGenButton1" icon = "sap-icon://sort" type="Transparent" press="onSortPress" />
+                        </OverflowToolbar>
+                    </infoToolbar>
+                    <items>
+                        <StandardListItem
+                                        id="idStandardListItem"
+                                        title="{Title}"
+                                        description="{ parts: [
+                                        { path: 'Description' },
+                                        { path: 'Owner' },
+                                        { path: 'CreationDate' }
+                                        ]}" 
+                                        info="{Status}" />
+                    </items>
+                </List>
+        </content>
+	</Page>
 </mvc:View>
