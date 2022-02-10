@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="appflex.controller.app"
+	controllerName="appjsn.controller.App"
 	displayBlock="true"
 	height="100%"
 	xmlns="sap.f"

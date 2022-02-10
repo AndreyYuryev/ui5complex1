@@ -1,7 +1,7 @@
 {
   "_version": "1.32.0",
   "sap.app": {
-    "id": "appflex",
+    "id": "appjsn",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -11,12 +11,12 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZCS_EBGCP_SRV/",
+        "uri": "/sap/opu/odata/",
         "type": "OData",
         "settings": {
           "annotations": [],
           "localUri": "localService/metadata.xml",
-          "odataVersion": "2.0"
+          "odataVersion": "4.0"
         }
       }
     }
@@ -40,7 +40,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.98.0",
+      "minUI5Version": "1.97.0",
       "libs": {
         "sap.ui.core": {}
       }
@@ -53,13 +53,19 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "appflex.i18n.i18n"
+          "bundleName": "appjsn.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true,
+          "groupId": "$direct"
+        }
       }
     },
     "resources": {
@@ -74,43 +80,41 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "appflex.view",
-        "controlId": "flexibleColumnLayout",
-        "transition":"slide"
+        "viewPath": "appjsn.view",
+				"controlId": "flexibleColumnLayout",
+				"transition": "slide"
       },
       "routes": [
-        {
-          "name": "master",
-          "pattern": ":layout:",
-          "target": [
-            "master"
-          ]
-        },
-        {
-          "name": "detail",
-          "pattern": "detail/{orderid}/{layout}",
-          "target": [
-            "master",
-            "detail"
-          ]
-        }
+				{
+					"pattern": ":layout:",
+					"name": "master",
+					"target": [
+						"master",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detail/{product}/{layout}",
+					"name": "detail",
+					"target": [
+						"master",
+						"detail"
+					]
+				}
       ],
       "targets": {
-        "master": {
-          "viewId": "master",
-          "viewName": "master",
-          "controlAggregation": "beginColumnPages"
-        },
-        "detail":{
-          "viewId": "detail",
-          "viewName": "detail",
-          "controlAggregation": "midColumnPages"
-
-        }
+				"master": {
+					"viewName": "Master",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detail": {
+					"viewName": "Detail",
+					"controlAggregation": "midColumnPages"
+				}
       }
     },
     "rootView": {
-      "viewName": "appflex.view.app",
+      "viewName": "appjsn.view.app",
       "type": "XML",
       "async": true,
       "id": "app"
