@@ -5,7 +5,7 @@ sap.ui.define([
 
 	return Controller.extend("appjsn.controller.Detail", {
 		onInit: function () {
-			var oOwnerComponent = this.getOwnerComponent();
+			let oOwnerComponent = this.getOwnerComponent();
 
 			this.oRouter = oOwnerComponent.getRouter();
 			this.oModel = oOwnerComponent.getModel();
@@ -23,8 +23,8 @@ sap.ui.define([
 		},
 
 		onEditToggleButtonPress: function() {
-			var oObjectPage = this.getView().byId("ObjectPageLayout"),
-				bCurrentShowFooterState = oObjectPage.getShowFooter();
+			let oObjectPage = this.getView().byId("ObjectPageLayout");
+			let bCurrentShowFooterState = oObjectPage.getShowFooter();
 
 			oObjectPage.setShowFooter(!bCurrentShowFooterState);
 		},

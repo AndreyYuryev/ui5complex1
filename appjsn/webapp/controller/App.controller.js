@@ -12,8 +12,8 @@ sap.ui.define([
 		},
 
 		onRouteMatched: function (oEvent) {
-			var sRouteName = oEvent.getParameter("name"),
-				oArguments = oEvent.getParameter("arguments");
+			let sRouteName = oEvent.getParameter("name");
+			let oArguments = oEvent.getParameter("arguments");
 
 			// Save the current route name
 			this.currentRouteName = sRouteName;
@@ -21,8 +21,8 @@ sap.ui.define([
 		},
 
 		onStateChanged: function (oEvent) {
-			var bIsNavigationArrow = oEvent.getParameter("isNavigationArrow"),
-				sLayout = oEvent.getParameter("layout");
+			let bIsNavigationArrow = oEvent.getParameter("isNavigationArrow");
+			let sLayout = oEvent.getParameter("layout");
 
 			// Replace the URL with the new layout if a navigation arrow was used
 			if (bIsNavigationArrow) {

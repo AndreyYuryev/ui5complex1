@@ -78,20 +78,44 @@
 				</subSections>
 			</ObjectPageSection>
 
-			<ObjectPageSection title="Suppliers">
+			<ObjectPageSection title="Items">
 				<subSections>
 					<ObjectPageSubSection>
 						<blocks>
 							<m:Table
-								id="suppliersTable"
-								items="{path : 'products>/ProductCollectionStats/Filters/1/values'}">
+								id="itemsTable"
+								items="{
+									path: 'OrderToItem',
+									sorter: {path: 'ItemID'}	
+								}">
 								<m:columns>
-									<m:Column/>
+									<m:Column
+										hAlign="Left">
+										<m:Text text="{i18n>itemTitle}"/>
+									</m:Column>
+									<m:Column
+										hAlign="Right">
+										<m:Text text="{i18n>posStatus}"/>
+									</m:Column>
 								</m:columns>
 								<m:items>
 									<m:ColumnListItem type="Navigation">
 										<m:cells>
-											<m:ObjectIdentifier text="{products>text}"/>
+											<m:ObjectNumber
+												emphasized="false"
+												number="{ItemID}"
+												state="None"
+												textAlign="Begin"
+												textDirection="Inherit"
+												unit=""
+											/>
+											<m:ObjectIdentifier
+												text="{ItemStatusdescr}"
+												textDirection="Inherit"
+												title=""
+												titleActive="false"
+												visible="true"
+											/>
 										</m:cells>
 									</m:ColumnListItem>
 								</m:items>

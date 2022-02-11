@@ -1,7 +1,7 @@
 {
   "_version": "1.32.0",
   "sap.app": {
-    "id": "appflex",
+    "id": "appflx",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -40,7 +40,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.71.0",
+      "minUI5Version": "1.97.0",
       "libs": {
         "sap.ui.core": {}
       }
@@ -53,7 +53,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "appflex.i18n.i18n"
+          "bundleName": "appflx.i18n.i18n"
         }
       },
       "": {
@@ -74,45 +74,35 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "appflex.view",
-        "controlId": "flexibleColumnLayout",
-        "transition":"slide"
+        "viewPath": "appflx.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
       },
       "routes": [
         {
-          "name": "master",
-          "pattern": ":layout:",
+          "name": "RouteApp",
+          "pattern": "RouteApp",
           "target": [
-            "master",
-            "detail"
-          ]
-        },
-        {
-          "name": "detail",
-          "pattern": "detail/{orderid}/{layout}",
-          "target": [
-            "master",
-            "detail"
+            "TargetApp"
           ]
         }
       ],
       "targets": {
-        "master": {
-          "viewName": "master",
-          "controlAggregation": "beginColumnPages"
-        },
-        "detail":{
-          "viewName": "detail",
-          "controlAggregation": "midColumnPages"
-
+        "TargetApp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "App",
+          "viewName": "App"
         }
       }
     },
     "rootView": {
-      "viewName": "appflex.view.app",
+      "viewName": "appflx.view.App",
       "type": "XML",
       "async": true,
-      "id": "app"
+      "id": "App"
     }
   }
 }

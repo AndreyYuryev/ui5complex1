@@ -12,21 +12,21 @@ sap.ui.define([
 		},
 
 		onRouteMatched: function (oEvent) {
-			var sRouteName = oEvent.getParameter("name"),
+			let sRouteName = oEvent.getParameter("name"),
 				oArguments = oEvent.getParameter("arguments");
 
 			// Save the current route name
 			this.currentRouteName = sRouteName;
-			this.currentProduct = oArguments.product;
+			this.currentorderid = oArguments.orderid;
 		},
 
 		onStateChanged: function (oEvent) {
-			var bIsNavigationArrow = oEvent.getParameter("isNavigationArrow"),
-				sLayout = oEvent.getParameter("layout");
+			let bIsNavigationArrow = oEvent.getParameter("isNavigationArrow");
+			let sLayout = oEvent.getParameter("layout");
 
 			// Replace the URL with the new layout if a navigation arrow was used
 			if (bIsNavigationArrow) {
-				this.oRouter.navTo(this.currentRouteName, {layout: sLayout, product: this.currentProduct}, true);
+				this.oRouter.navTo(this.currentRouteName, {layout: sLayout, orderid: this.currentorderid}, true);
 			}
 		},
 

@@ -41,10 +41,10 @@ sap.ui.define([
 		},
 
 		onListItemPress: function (oEvent) {
-			var productPath = oEvent.getSource().getBindingContext("products").getPath(),
-				product = productPath.split("/").slice(-1).pop();
+			let productPath = oEvent.getSource().getBindingContext().getPath();
+			let orderid = productPath.split("'").slice(1,2).pop();
 
-			this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, product: product});
+			this.oRouter.navTo("detail", {layout: fioriLibrary.LayoutType.TwoColumnsMidExpanded, orderid: orderid});
 		}
 	});
 });

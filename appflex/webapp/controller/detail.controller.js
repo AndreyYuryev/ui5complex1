@@ -15,10 +15,10 @@ sap.ui.define([
 		},
 
 		_onProductMatched: function (oEvent) {
-			this._product = oEvent.getParameter("arguments").product || this._product || "0";
+			this._orderid = oEvent.getParameter("arguments").orderid || this._orderid || "0";
 			this.getView().bindElement({
-				path: "/ProductCollection/" + this._product,
-				model: "products"
+				"path": "/PMOrderSet('" + this._orderid + "')",
+				"parameters": { expand: "OrderToItem"}
 			});
 		},
 

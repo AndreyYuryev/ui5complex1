@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Start appjsn",
+            "name": "Start appflx",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npx",
@@ -16,7 +16,7 @@
             ],
             "args": [
                 "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#appjsn-display"
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#appflx-display"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
@@ -26,7 +26,7 @@
             }
         },
         {
-            "name": "Start appjsn with UI5 Version",
+            "name": "Start appflx with UI5 Version",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "npx",
@@ -40,7 +40,7 @@
             ],
             "args": [
                 "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#appjsn-display",
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#appflx-display",
                 "${input:UI5MinVersion1.65.0}"
             ],
             "console": "integratedTerminal",
@@ -51,7 +51,51 @@
             }
         },
         {
-            "name": "Start appjsn Local",
+            "name": "Start appflx Mock",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandboxMockServer.html?sap-ui-xx-viewCache=false#appflx-display"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229,
+            "env": {}
+        },
+        {
+            "name": "Start appflx Mock with UI5 Version",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npx",
+            "windows": {
+                "runtimeExecutable": "npx.cmd"
+            },
+            "runtimeArgs": [
+                "fiori",
+                "run"
+            ],
+            "args": [
+                "--open",
+                "test/flpSandboxMockServer.html?sap-ui-xx-viewCache=false#appflx-display",
+                "${input:UI5MinVersion1.65.0}"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "port": 9229
+        },
+        {
+            "name": "Start appflx Local",
             "type": "node",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -67,29 +111,7 @@
                 "--config",
                 "./ui5-local.yaml",
                 "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#appjsn-display"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {}
-        },
-        {
-            "name": "APPJSN",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "npx",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--open",
-                "index.html?sap-ui-xx-viewCache=false"
+                "test/flpSandbox.html?sap-ui-xx-viewCache=false#appflx-display"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
