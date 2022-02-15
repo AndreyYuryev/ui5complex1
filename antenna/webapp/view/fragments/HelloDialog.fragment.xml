@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+>
+	<Dialog id="idDialog"
+        title="Simple dialog"
+        class="sapUiPopupWithPadding"
+        resizable="true">
+        <content>
+    		<Text text="test dialog" />
+            <Input id="idInput" textAlign="Initial" change="onObjectSave"/>
+		</content>
+	    <beginButton>
+            <Button id="idSave"  text="Save"  press="onObjectSave" />
+        </beginButton>
+        <endButton>
+            <Button id="idClose" text="Close" press="onObjectClose" />
+        </endButton>
+	</Dialog>
+</core:FragmentDefinition>

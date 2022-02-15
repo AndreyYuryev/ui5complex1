@@ -1,0 +1,28 @@
+<mvc:View
+	controllerName="appflex.controller.detail2"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:f="sap.f"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc">
+	<f:DynamicPage id="dynamicPageId2" toggleHeaderOnTitleClick="false">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<m:Title text="Item" wrapping="true" class="sapUiTinyMarginEnd"/>
+				</f:heading>
+					<f:navigationActions>
+						<m:OverflowToolbarButton
+							type="Transparent"
+							icon="sap-icon://decline"
+							press=".handleClose"
+							tooltip="Close column"
+							visible="{= ${/actionButtonsInfo/endColumn/closeColumn} !== null }"/>
+					</f:navigationActions>				
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:content>
+			<m:Text text="{ItemID}"/>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

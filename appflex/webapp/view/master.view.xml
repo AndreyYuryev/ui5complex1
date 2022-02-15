@@ -8,7 +8,7 @@
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
-					<Title text="Products"/>
+					<Title text="Orders"/>
 				</f:heading>
 			</f:DynamicPageTitle>
 		</f:title>
@@ -25,12 +25,7 @@
 				<Table
 					id="productsTable"
 					inset="false"
-					items="{
-						path: '/PMOrderSet',
-						sorter: {
-							path: 'OrderID'
-						}
-					}"
+					items="{/PMOrderSet}"
 					class="sapFDynamicPageAlignContent"
 					width="auto">
 					<columns>

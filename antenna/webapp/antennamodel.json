@@ -1,0 +1,56 @@
+{
+    "Protokoll": [
+        {
+            "Standortkennung": "BY4132",
+            "Messdatum": "2016-08-25",
+            "Band": "GSM900",
+            "ProtokollID": "0001"
+        },
+        {
+            "Standortkennung": "BY4132",
+            "Messdatum": "2016-08-24",
+            "Band": "LTE800",
+            "ProtokollID": "0002"
+        },
+        {
+            "Standortkennung": "BY4132",
+            "Messdatum": "2016-08-25",
+            "Band": "UMTS",
+            "ProtokollID": "0003"
+        }
+    ],
+    "ProtokollItem": [
+        {
+            "ProtokollID": "0001",
+            "ProtokolItemID": "0101",
+            "AntenneTyp": "A"
+        },
+        {
+            "ProtokollID": "0001",
+            "ProtokolItemID": "0102",
+            "AntenneTyp": "B"
+        },
+        {
+            "ProtokollID": "0002",
+            "ProtokolItemID": "0201",
+            "AntenneTyp": "C"
+        },
+        {
+            "ProtokollID": "0002",
+            "ProtokolItemID": "0202",
+            "AntenneTyp": "D"
+        },
+        {
+            "ProtokollID": "0003",
+            "ProtokolItemID": "0301",
+            "AntenneTyp": "E"
+        },
+        {
+            "ProtokollID": "0003",
+            "ProtokolItemID": "0302",
+            "AntenneTyp": "F"
+        }
+
+    ],
+    "Protokollitemsfiltered": []
+}

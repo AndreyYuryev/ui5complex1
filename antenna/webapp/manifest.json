@@ -1,7 +1,7 @@
 {
-  "_version": "1.32.0",
+  "_version": "1.17.0",
   "sap.app": {
-    "id": "appflex",
+    "id": "antenna",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -11,7 +11,7 @@
     "description": "{{appDescription}}",
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/sap/ZCS_EBGCP_SRV/",
+        "uri": "/sap/opu/odata/",
         "type": "OData",
         "settings": {
           "annotations": [],
@@ -40,7 +40,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.71.0",
+      "minUI5Version": "1.76.0",
       "libs": {
         "sap.ui.core": {}
       }
@@ -53,13 +53,19 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "appflex.i18n.i18n"
+          "bundleName": "antenna.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
         "preload": true,
-        "settings": {}
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true,
+          "groupId": "$direct"
+        }
       }
     },
     "resources": {
@@ -74,59 +80,59 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "appflex.view",
-        "controlId": "flexibleColumnLayout",
-        "transition":"slide"
+        "viewPath": "antenna.view",
+        "controlAggregation": "pages",
+        "controlId": "App",
+        "clearControlAggregation": false,
+        "bypassed": { 
+          "target": "NotFound"
+        }
       },
       "routes": [
         {
-          "name": "master",
-          "pattern": ":layout:",
+          "name": "Master",
+          "pattern": "",
           "target": [
-            "master",
-            "detail"
+            "Master"
           ]
         },
         {
-          "name": "detail",
-          "pattern": "detail/{orderid}/{layout}",
+          "name": "Detail",
+          "pattern": "item/{protokolid}",
           "target": [
-            "master",
-            "detail"
-          ]
-        },
-        {
-          "name": "detail2",
-          "pattern": "detail/{orderid}/detail2/{itemid}/{layout}",
-          "target": [
-            "master",
-            "detail",
-            "detail2"
+            "Detail"
           ]
         }
       ],
       "targets": {
-        "master": {
-          "viewName": "master",
-          "controlAggregation": "beginColumnPages"
+        "Master": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Master",
+          "viewName": "Master"
         },
-        "detail":{
-          "viewName": "detail",
-          "controlAggregation": "midColumnPages"
-
-        },
-        "detail2":{
-          "viewName": "detail2",
-          "controlAggregation": "endColumnPages"
-
+        "Detail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Detail",
+          "viewName": "Detail"
+        },       
+        "NotFound":{
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "NotFound",
+          "viewName": "NotFound"
         }
       }
     },
     "rootView": {
-      "viewName": "appflex.view.app",
+      "viewName": "antenna.view.App",
       "type": "XML",
       "async": true,
-      "id": "app"
+      "id": "App"
     }
   }
 }

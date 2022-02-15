@@ -1,0 +1,32 @@
+<mvc:View
+	controllerName="antenna.controller.NotFound"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+    <Page
+        backgroundDesign="Standard"
+        contentOnlyBusy="false"
+        enableScrolling="true"
+        floatingFooter="false"
+        navButtonTooltip=""
+        showFooter="true"
+        showHeader="true"
+        showNavButton="false"
+        showSubHeader="true"
+        title="titleNotfound"
+        titleLevel="Auto"
+    >
+    <content>
+        <Text
+            text="Not Found..."
+            textAlign="Begin"
+            textDirection="Inherit"
+            wrapping="true"
+            wrappingType="Normal"
+        />
+    </content>
+    </Page>
+</mvc:View>

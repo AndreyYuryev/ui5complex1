@@ -1,0 +1,72 @@
+<mvc:View
+	controllerName="antenna.controller.Master"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+ 	<Page 
+		id="pageMaster"
+	 	title="{i18n>title>}"
+	>	
+		<content>
+			<Table
+				id="protokolls"
+				alternateRowColors="false"
+				backgroundDesign="Translucent"
+				contextualWidth="Inherit"
+				fixedLayout="false"
+				popinLayout="Block"
+				showOverlay="false"
+				growing="true"
+				growingScrollToLoad="false"
+				growingThreshold="5"
+				items="{antenna>/Protokoll}"
+			>
+				<columns>
+
+					<Column
+						hAlign="Left">
+						<Text text="{i18n>stndkng}"/>
+					</Column>
+					<Column
+						hAlign="Left">
+						<Text text=""/>
+					</Column>										
+					<Column
+						hAlign="Left">
+						<Text text="{i18n>date}"/>
+					</Column>					
+				</columns>
+				<items>
+					<ColumnListItem
+						vAlign="Inherit"
+						type="Navigation"
+						press="onItemsPress"
+					>
+						<cells>
+
+							<ObjectIdentifier
+								text="{antenna>Standortkennung}"
+								textDirection="Inherit"
+								title="title"
+								titleActive="false"
+								visible="true"
+							/>
+							<Button text="Edit" press="onObjectPress"></Button>
+							<ObjectNumber
+								emphasized="true"
+								number="{antenna>Messdatum}"
+								state="None"
+								textAlign="Begin"
+								textDirection="Inherit"
+								unit=""
+							/>							
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
