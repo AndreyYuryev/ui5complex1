@@ -28,16 +28,20 @@
 
 					<Column
 						hAlign="Left">
-						<Text text="{i18n>stndkng}"/>
+						<Text text="Standortkennung"/>
 					</Column>
 					<Column
 						hAlign="Left">
-						<Text text=""/>
-					</Column>										
+						<Text text="Band"/>
+					</Column>
 					<Column
 						hAlign="Left">
 						<Text text="{i18n>date}"/>
-					</Column>					
+					</Column>	
+					<Column
+						hAlign="Left">
+						<Text text=""/>
+					</Column>		
 				</columns>
 				<items>
 					<ColumnListItem
@@ -50,11 +54,15 @@
 							<ObjectIdentifier
 								text="{antenna>Standortkennung}"
 								textDirection="Inherit"
-								title="title"
 								titleActive="false"
 								visible="true"
 							/>
-							<Button text="Edit" press="onObjectPress"></Button>
+							<ObjectIdentifier
+								text="{antenna>Band}"
+								textDirection="Inherit"
+								titleActive="false"
+								visible="true"
+							/>
 							<ObjectNumber
 								emphasized="true"
 								number="{antenna>Messdatum}"
@@ -63,6 +71,9 @@
 								textDirection="Inherit"
 								unit=""
 							/>							
+							<!--<Button text="Dialog" press="onObjectPress"></Button>-->
+							<!--<Button text="Edit"   press="onObjectEdit"></Button>-->							
+							<Button text="Display"   press="onObjectDisplay"></Button>
 						</cells>
 					</ColumnListItem>
 				</items>

@@ -102,6 +102,20 @@
           "target": [
             "Detail"
           ]
+        },
+        {
+          "name": "EditMaster",
+          "pattern": "editmaster/{protokolid}",
+          "target": [
+            "EditMaster"
+          ]
+        },
+        {
+          "name": "DisplayMaster",
+          "pattern": "displaymaster/{protokolid}",
+          "target": [
+            "DisplayMaster"
+          ]
         }
       ],
       "targets": {
@@ -119,6 +133,20 @@
           "viewId": "Detail",
           "viewName": "Detail"
         },       
+        "EditMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EditMaster",
+          "viewName": "EditMaster"
+        },
+        "DisplayMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "DisplayMaster",
+          "viewName": "DisplayMaster"
+        },        
         "NotFound":{
           "viewType": "XML",
           "transition": "slide",

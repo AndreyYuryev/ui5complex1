@@ -1,0 +1,75 @@
+<mvc:View
+	controllerName="antenna.controller.DisplayMaster"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+ 	<Page 
+		id="pageMaster"
+	 	title="{i18n>title>}"
+	>	
+		<content>
+			<VBox id="idVBox" class="sapUiSmallMargin">
+                <f:Form id="FormChange"
+                        editable="true">
+                    <f:toolbar>
+                                    <Toolbar id="TB1">
+                                        <Title id="ToolbarTitle" text="Display AntennaProtokoll"/>
+                                        <ToolbarSpacer id="idTBS" />
+                                        <Button id="idBTC" text="Edit" press="onEditPress"/>
+                                        <!--<Button id="idBTU" text="Update" press="onUpdatePress" />-->
+                                        <!--<Button id="idBTD" text="Delete" press="onDeletePress" />-->
+                                    </Toolbar>
+                                </f:toolbar>                        
+                                <f:layout>
+                                    <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1"
+                                        labelSpanXL="3"
+                                        labelSpanL="3"
+                                        labelSpanM="3"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="4"
+                                        emptySpanL="4"
+                                        emptySpanM="4"
+                                        emptySpanS="0"
+                                        columnsXL="1"
+                                        columnsL="1"
+                                        columnsM="1"
+                                        singleContainerFullSize="false" />
+                                </f:layout>
+                                <f:formContainers>
+                                    <f:FormContainer id="_IDGenFormContainer1">
+                                        <f:formElements>
+                                            <f:FormElement id="_IDGenFormElement1">
+                                                <f:label>
+                                                    <Label id="_IDGenLabel1" required="true" text='Standortkennung'></Label>
+                                                </f:label>
+                                                <f:fields>
+                                                    <Text 
+                                                        text="{
+                                                            path: 'antenna>/Antennaprotokollheader/0/Standortkennung',
+                                                            type: 'sap.ui.model.odata.type.String',
+                                                            constraints: {
+                                                                nullable: false,
+                                                                maxLength: 30
+                                                            }
+                                                        }" 
+                                                        id="idStdKng"/>
+                                                </f:fields>
+                                            </f:FormElement>
+                                            <f:FormElement id="_IDGenFormElement2" label="Band">
+                                                <f:fields>
+                                                    <Text text="{antenna>/Antennaprotokollheader/0/Band}" id="idBand"/>
+                                                </f:fields>
+                                            </f:FormElement>                                    
+                                        </f:formElements>
+                                    </f:FormContainer>
+                                </f:formContainers>
+                            </f:Form>
+                        </VBox>
+		</content>
+	</Page>
+</mvc:View>

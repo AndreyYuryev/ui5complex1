@@ -30,6 +30,19 @@ sap.ui.define([
 		onObjectSave: function (oEvent){
 			let sValue = oEvent.getSource().getProperty("value");
 			oEvent.getSource().getParent().close();
+		},
+
+		onObjectEdit: function (oEvent) {
+			let oObject = oEvent.getSource().getBindingContext("antenna").getObject();
+			this.getOwnerComponent().getRouter().navTo('EditMaster', {
+				protokolid: oObject.ProtokollID,
+			});
+		},
+		onObjectDisplay: function (oEvent) {
+			let oObject = oEvent.getSource().getBindingContext("antenna").getObject();
+			this.getOwnerComponent().getRouter().navTo('DisplayMaster', {
+				protokolid: oObject.ProtokollID,
+			});
 		}
 
 	});

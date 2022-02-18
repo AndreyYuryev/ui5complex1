@@ -1,7 +1,7 @@
 {
     "Protokoll": [
         {
-            "Standortkennung": "BY4132",
+            "Standortkennung": "BY4131",
             "Messdatum": "2016-08-25",
             "Band": "GSM900",
             "ProtokollID": "0001"
@@ -13,7 +13,7 @@
             "ProtokollID": "0002"
         },
         {
-            "Standortkennung": "BY4132",
+            "Standortkennung": "BY4133",
             "Messdatum": "2016-08-25",
             "Band": "UMTS",
             "ProtokollID": "0003"
@@ -23,34 +23,47 @@
         {
             "ProtokollID": "0001",
             "ProtokolItemID": "0101",
-            "AntenneTyp": "A"
+            "AntenneTyp": "Antenna",
+            "Hersteller": "Kathrein"
         },
         {
             "ProtokollID": "0001",
             "ProtokolItemID": "0102",
-            "AntenneTyp": "B"
+            "AntenneTyp": "Jumper",
+            "Hersteller": "Kathrein"
         },
+        {
+            "ProtokollID": "0001",
+            "ProtokolItemID": "0103",
+            "AntenneTyp": "Feeder",
+            "Hersteller": "Kathrein"
+        },        
         {
             "ProtokollID": "0002",
             "ProtokolItemID": "0201",
-            "AntenneTyp": "C"
+            "AntenneTyp": "Antenna",
+            "Hersteller": "Kathrein"
         },
         {
             "ProtokollID": "0002",
             "ProtokolItemID": "0202",
-            "AntenneTyp": "D"
+            "AntenneTyp": "Feeder",
+            "Hersteller": "Kathrein"
         },
         {
             "ProtokollID": "0003",
             "ProtokolItemID": "0301",
-            "AntenneTyp": "E"
+            "AntenneTyp": "Antenna",
+            "Hersteller": "Kathrein"
         },
         {
             "ProtokollID": "0003",
             "ProtokolItemID": "0302",
-            "AntenneTyp": "F"
+            "AntenneTyp": "Feeder",
+            "Hersteller": "Kathrein"
         }
 
     ],
-    "Protokollitemsfiltered": []
+    "Protokollitemsfiltered": [],
+    "AntennaProtokollheader": []
 }
